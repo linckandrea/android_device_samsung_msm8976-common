@@ -24,4 +24,6 @@
 #define BTM_DEF_LOCAL_NAME   "Samsung Galaxy Tab S2"
 #define BLUETOOTH_QTI_SW TRUE
 #define BLE_VND_INCLUDED   TRUE
+#define MAX_ACL_CONNECTIONS     16
+
 #endif
