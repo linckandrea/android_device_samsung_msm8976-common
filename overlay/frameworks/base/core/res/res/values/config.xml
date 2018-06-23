@@ -280,12 +280,15 @@
         <item>com.google.android.gms/com.google.android.gms.nearby.discovery.service.DiscoveryService</item>
     </string-array>
 
-     <!-- Values for GPS configuration -->
-     <string-array translatable="false" name="config_gpsParameters">
+    <!-- If this is true, device supports Sustained Performance Mode. -->
+    <bool name="config_sustainedPerformanceModeSupported">true</bool>
+
+    <!-- Values for GPS configuration -->
+    <string-array translatable="false" name="config_gpsParameters">
         <item>XTRA_SERVER_1=https://xtrapath1.izatcloud.net/xtra3grc.bin</item>
         <item>XTRA_SERVER_2=https://xtrapath2.izatcloud.net/xtra3grc.bin</item>
         <item>XTRA_SERVER_3=https://xtrapath3.izatcloud.net/xtra3grc.bin</item>
-     </string-array>
+    </string-array>
 
     <!-- The amount to scale fullscreen snapshots for Overview and snapshot starting windows. -->
         <item name="config_highResTaskSnapshotScale" format="float" type="dimen">0.8</item>
