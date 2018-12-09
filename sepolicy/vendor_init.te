@@ -15,6 +15,7 @@ allow vendor_init proc_dirty:file w_file_perms;
 allow vendor_init proc_dirty_ratio:file w_file_perms;
 allow vendor_init proc_kernel_sched:file w_file_perms;
 allow vendor_init proc:file w_file_perms;
+set_prop(vendor_init, vendor_mpctl_prop);
 
 # sx9310_grip sensor
 allow vendor_init sysfs:lnk_file setattr;
