@@ -31,6 +31,9 @@
 # Graphics
 /sys/devices/virtual/lcd/panel(/.*)?                            u:object_r:sysfs_graphics:s0
 
+# DRM
+/(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.1-service\.widevine                u:object_r:hal_drm_widevine_exec:s0
+
 # Lights
 /sys/devices/virtual/sec/sec_touchkey/brightness                u:object_r:sysfs_leds:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.samsung		      u:object_r:hal_light_default_exec:s0
