@@ -277,10 +277,6 @@ bin/garden_app:vendor/bin/garden_app
 bin/loc_launcher:vendor/bin/loc_launcher
 bin/xtwifi-client:vendor/bin/xtwifi-client
 bin/xtwifi-inet-agent:vendor/bin/xtwifi-inet-agent
-etc/permissions/com.qti.location.sdk.xml
-etc/permissions/izat.xt.srv.xml
-framework/com.qti.location.sdk.jar
-framework/izat.xt.srv.jar
 lib64/hw/gps.default.so
 lib64/libgps.utils.so
 -lib64/libloc_api_v02.so
@@ -304,7 +300,6 @@ vendor/lib64/liblocationservice_glue.so
 vendor/lib64/liblowi_client.so
 vendor/lib64/libquipc_os_api.so
 vendor/lib64/libulp2.so
-vendor/lib64/libxt_native.so
 vendor/lib64/libxtadapter.so
 vendor/lib64/libxtwifi_ulp_adaptor.so
 
