@@ -17,4 +17,8 @@
     <!-- Max visible notification icons -->
     <integer name="config_maxVisibleNotificationIcons">12</integer>
     <integer name="config_maxVisibleNotificationIconsWhenDark">13</integer>
+
+    <!-- Whether to post reset runnable for all clients. Needed for some older
+         vendor fingerprint HAL implementations. -->
+    <bool name="config_fingerprintPostResetRunnableForAllClients">true</bool>
 </resources>
