@@ -183,10 +183,6 @@ TARGET_NEEDS_NETD_DIRECT_CONNECT_RULE := true
 # Peripheral manager
 TARGET_PER_MGR_ENABLED := true
 
-# Power
-TARGET_HAS_NO_WLAN_STATS := true
-TARGET_RPM_SYSTEM_STAT := /d/rpm_stats
-
 # Properties
 TARGET_SYSTEM_PROP += $(VENDOR_PATH)/system.prop
 
