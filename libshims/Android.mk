@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2017 The LineageOS Project
+# Copyright (C) 2020 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -31,5 +31,15 @@ LOCAL_SRC_FILES := rild_socket.c
 
 LOCAL_MODULE := libshims_rild_socket
 LOCAL_MODULE_TAGS := optional
+
+include $(BUILD_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
+
+LOCAL_SRC_FILES := libaudioclient_shim.cpp
+LOCAL_MODULE := libaudioclient_shim
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_SHARED_LIBRARIES := libaudioclient
+LOCAL_VENDOR_MODULE := true
 
 include $(BUILD_SHARED_LIBRARY)

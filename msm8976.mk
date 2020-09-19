@@ -90,7 +90,8 @@ PRODUCT_PACKAGES += \
     libqcompostprocbundle \
     libqcomvoiceprocessing \
     libqcomvisualizer \
-    libtinycompress
+    libtinycompress \
+    libaudioclient_shim
 
 PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-impl \

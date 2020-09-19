@@ -226,7 +226,8 @@ BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(VENDOR_PATH)/sepolicy/private
 TARGET_LD_SHIM_LIBS := \
     /system/lib/hw/camera.vendor.msm8952.so|libshims_camera.so \
     /system/lib64/libsec-ril.so|libshims_rild_socket.so \
-    /system/vendor/lib64/libizat_core.so|libshims_get_process_name.so
+    /system/vendor/lib64/libizat_core.so|libshims_get_process_name.so \
+    /system/vendor/lib/libril-qc-qmi-1.so|libaudioclient_shim.so
 
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
