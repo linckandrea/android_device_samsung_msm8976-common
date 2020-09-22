@@ -277,6 +277,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     librecovery_updater_samsung
 
+# HIDL HAL list
+PRODUCT_ENFORCE_VINTF_MANIFEST_OVERRIDE := true
+
 # RenderScript HAL
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
