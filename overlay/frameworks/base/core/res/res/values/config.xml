@@ -267,4 +267,7 @@
         <item>XTRA_SERVER_2=https://xtrapath2.izatcloud.net/xtra3grc.bin</item>
         <item>XTRA_SERVER_3=https://xtrapath3.izatcloud.net/xtra3grc.bin</item>
      </string-array>
+
+    <!-- The amount to scale fullscreen snapshots for Overview and snapshot starting windows. -->
+        <item name="config_highResTaskSnapshotScale" format="float" type="dimen">0.8</item>
 </resources>
