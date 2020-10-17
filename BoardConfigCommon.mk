@@ -185,6 +185,9 @@ TARGET_PROVIDES_KEYMASTER := true
 # Network Routing
 TARGET_NEEDS_NETD_DIRECT_CONNECT_RULE := true
 
+# Memfd
+TARGET_HAS_MEMFD_BACKPORT := true
+
 # Peripheral manager
 TARGET_PER_MGR_ENABLED := true
 
