@@ -183,6 +183,9 @@ TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 # Keymaster
 TARGET_PROVIDES_KEYMASTER := true
 
+# Legacy memfd
+TARGET_HAS_MEMFD_BACKPORT := true
+
 # Network Routing
 TARGET_NEEDS_NETD_DIRECT_CONNECT_RULE := true
 
