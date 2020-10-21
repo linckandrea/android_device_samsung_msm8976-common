@@ -114,6 +114,8 @@ TARGET_BOARD_INFO_FILE := $(VENDOR_PATH)/board-info.txt
 
 # Camera
 USE_DEVICE_SPECIFIC_CAMERA := true
+MALLOC_SVELTE_FOR_LIBC32 := true
+
 TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
     /system/bin/cameraserver=24 \
     /system/vendor/bin/mm-qcamera-daemon=24 \
