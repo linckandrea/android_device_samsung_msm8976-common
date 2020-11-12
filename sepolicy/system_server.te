@@ -6,5 +6,6 @@ r_dir_file(system_server, app_efs_file)
 allow system_server efs_file:dir search;
 allow system_server efs_file:file r_file_perms;
 
+get_prop(system_server, exported_camera_prop);
 get_prop(system_server, userspace_reboot_config_prop);
 get_prop(system_server, userspace_reboot_exported_prop);
