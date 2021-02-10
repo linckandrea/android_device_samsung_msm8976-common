@@ -233,6 +233,7 @@ TARGET_LD_SHIM_LIBS := \
     /system/vendor/lib64/libril-qc-qmi-1.so|libaudioclient_shim.so
 
 # Wifi
+WIFI_AVOID_IFACE_RESET_MAC_CHANGE := true
 BOARD_HAS_QCOM_WLAN := true
 BOARD_HAS_QCOM_WLAN_SDK := true
 BOARD_WLAN_DEVICE := qcwcn
