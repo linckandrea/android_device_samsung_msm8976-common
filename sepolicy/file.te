@@ -5,3 +5,4 @@ type sysfs_camera, fs_type, sysfs_type;
 type sysfs_mdnie, fs_type, sysfs_type;
 type sysfs_sec_key, fs_type, sysfs_type;
 type proc_kernel_sched, fs_type;
+type alarm_device, dev_type, mlstrustedobject;

@@ -48,3 +48,6 @@
 
 # Uncrypt
 /dev/block/platform/soc\.0/7824900\.sdhci/by-name/fota          u:object_r:misc_block_device:s0
+
+# device nodes
+/dev/alarm                                                      u:object_r:alarm_device:s0
