@@ -1,0 +1,3 @@
+# Dpm data
+allow vendor_init dpmd_data_file:file rw_file_perms;
+allow vendor_init dpmd_data_file:dir create_dir_perms;
