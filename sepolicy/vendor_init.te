@@ -13,3 +13,7 @@ allow vendor_init firmware_file:file r_file_perms;
 allow vendor_init proc_dirty:file w_file_perms;
 allow vendor_init proc_dirty_ratio:file w_file_perms;
 allow vendor_init proc_kernel_sched:file w_file_perms;
+allow vendor_init proc:file w_file_perms;
+
+# sx9310_grip sensor
+allow vendor_init sysfs:lnk_file setattr;
