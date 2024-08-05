@@ -29,25 +29,25 @@ vendor/lib/rfsa/adsp/libscveObjectSegmentation_skel.so
 vendor/lib/rfsa/adsp/libscveT2T_skel.so
 vendor/lib/rfsa/adsp/libscveTextReco_skel.so
 
-# Audio libraries
-vendor/lib64/libacdb-fts.so
-vendor/lib64/libacdbloader.so
-vendor/lib64/libacdbmapper.so
-vendor/lib64/libacdbrtac.so
-vendor/lib64/libadiertac.so
-vendor/lib64/libaudcal.so
-vendor/lib64/libaudioalsa.so
-vendor/lib/libacdb-fts.so
-vendor/lib/libacdbloader.so
-vendor/lib/libacdbmapper.so
-vendor/lib/libacdbrtac.so
-vendor/lib/libadiertac.so
-vendor/lib/libadm.so
-vendor/lib/libaudcal.so
-vendor/lib/libaudioalsa.so
-vendor/lib/soundfx/libqcbassboost.so
-vendor/lib/soundfx/libqcreverb.so
-vendor/lib/soundfx/libqcvirt.so
+# Audio libraries - T819XXU2BSA1
+vendor/lib64/libacdb-fts.so|95613f0fa5996142c36cfc9403e2889569b61667
+vendor/lib64/libacdbloader.so|ec9c8d2228adb67c909fe6e73ca46921d074a044
+vendor/lib64/libacdbmapper.so|d7c69a7687b7b688693006d99c17b557906d4f8f
+vendor/lib64/libacdbrtac.so|781bd34c1de989c903d4b3e245ee78f66b59a06a
+vendor/lib64/libadiertac.so|903f2f4de38bf2317ce85b1d55bd0e7032715af8
+vendor/lib64/libaudcal.so|1097af0a182ad40395a843d569d11275b2010363
+vendor/lib64/libaudioalsa.so|4a4ff8b6e6dba3df769a6cc92b9a8415a794fc47
+vendor/lib/libacdb-fts.so|725a2287c39e8c80500b169307a3000ba9fc8b09
+vendor/lib/libacdbloader.so|e257cb9c584b91963b34ca8983d59464038b9e41
+vendor/lib/libacdbmapper.so|8ec800ad65842d732c85b185976bc2efc96baf17
+vendor/lib/libacdbrtac.so|b4052262703129f24784c1376269b47ce5fb23e1
+vendor/lib/libadiertac.so|d35deea5e6610d8118e716607f9687898bb175cf
+vendor/lib/libadm.so|25f2ff988c6b745ba189a7c0e2a23f3ee922c556
+vendor/lib/libaudcal.so|cc2776612575302051c0be7238497f48944d8fca
+vendor/lib/libaudioalsa.so|e88df8d35e5d5f1a1c1334e9ef2673ea7c03383f
+vendor/lib/soundfx/libqcbassboost.so|c314acb1f12a9fb01b1defb752fb676d911182be
+vendor/lib/soundfx/libqcreverb.so|61f58758478384c06e7fbef47eebd8b156811581
+vendor/lib/soundfx/libqcvirt.so|50641a97829f5096ee3ff51e896752c593c0d68e
 
 # Bluetooth
 # aptX - from marlin - OPM1.171019.011
