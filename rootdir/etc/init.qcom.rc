@@ -54,10 +54,6 @@ on fs
     write /proc/sys/vm/swappiness 100
     mkdir /persist/data 0700 system system
     restorecon_recursive /persist
-    restorecon_recursive /dsp
-    chown system radio /efs
-    chmod 0771 /efs
-    restorecon_recursive /efs
 
 on post-fs-data
     # Boot time fs tune
