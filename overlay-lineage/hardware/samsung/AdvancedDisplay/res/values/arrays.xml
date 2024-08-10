@@ -28,7 +28,6 @@
         <item>@string/mdnie_scenario_browser</item>
         <item>@string/mdnie_scenario_ebook</item>
         <item>@string/mdnie_scenario_email</item>
-        <item>@string/mdnie_scenario_tdmb</item>
     </string-array>
 
     <string-array name="mdnie_scenario_entries_values" translatable="false">
@@ -43,6 +42,23 @@
         <item>8</item>
         <item>9</item>
         <item>10</item>
-        <item>11</item>
+    </string-array>
+
+    <string-array name="mdnie_accessibility_entries" translatable="false">
+        <item>@string/mdnie_accessibility_normal</item>
+        <item>@string/mdnie_accessibility_inverse</item>
+        <item>@string/mdnie_accessibility_color_blind</item>
+        <item>@string/mdnie_accessibility_screen_curtain</item>
+        <item>@string/mdnie_accessibility_grayscale</item>
+        <item>@string/mdnie_accessibility_gray_negative</item>
+    </string-array>
+
+    <string-array name="mdnie_accessibility_entries_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
     </string-array>
 </resources>
