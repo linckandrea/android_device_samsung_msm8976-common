@@ -202,7 +202,7 @@ BOARD_PROVIDES_LIBRIL := true
 TARGET_RIL_VARIANT := caf
 
 # Ramdisk
-BOARD_ROOT_EXTRA_FOLDERS := dsp efs firmware firmware-modem persist
+BOARD_ROOT_EXTRA_FOLDERS := bt_firmware dsp efs firmware firmware-modem persist
 BOARD_ROOT_EXTRA_SYMLINKS := /system/etc/firmware/btfw32.tlv:/bt_firmware/image/btfw32.tlv
 BOARD_ROOT_EXTRA_SYMLINKS += /system/etc/firmware/btnv32.bin:/bt_firmware/image/btnv32.bin
 BOARD_ROOT_EXTRA_SYMLINKS += /data/tombstones:/tombstones
