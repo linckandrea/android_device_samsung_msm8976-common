@@ -114,9 +114,11 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    android.hardware.camera.provider@2.4-impl:32 \
+    android.hardware.camera.provider@2.4-impl \
+    camera.device@1.0-impl \
     camera.msm8952 \
-    libshims_camera
+    libshims_camera \
+    Snap
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -146,7 +148,7 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service.8976 \
+    android.hardware.biometrics.fingerprint@2.0-service.8976 \
     fingerprint.msm8952
 
 # For android_filesystem_config.h
