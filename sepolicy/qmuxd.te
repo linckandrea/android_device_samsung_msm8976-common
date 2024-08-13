@@ -1,0 +1,2 @@
+allow netmgrd sysfs_ssr:dir r_dir_perms;
+allow netmgrd sysfs_ssr:lnk_file r_file_perms;
