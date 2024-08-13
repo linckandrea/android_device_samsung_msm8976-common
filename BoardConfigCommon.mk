@@ -115,7 +115,8 @@ TARGET_BOARD_INFO_FILE := $(VENDOR_PATH)/board-info.txt
 # Camera
 USE_DEVICE_SPECIFIC_CAMERA := true
 TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
-    /system/bin/mediaserver=24
+    /system/bin/mediaserver=24 \
+    /system/vendor/bin/hw/rild=28
 TARGET_USES_MEDIA_EXTENSIONS := true
 
 # Charger
