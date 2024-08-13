@@ -1,8 +1,8 @@
 # Samsung Package Version: T813XXS2BSJ3_T813XAC2BSA2_XAC, unless pinned
 
 # ACBD Data - T819XXU2BSA1
-etc/Bluetooth_cal.acdb:|vendor/etc/Bluetooth_cal.acdb677842fbadd1d5a3eb40e79bffd89b75a730e99c
-etc/General_cal.acdb:|vendor/etc/Bluetooth_cal.acdb9a3dd71272d1bb97f52f7e15b944a12f0689fa53
+etc/Bluetooth_cal.acdb:vendor/etc/Bluetooth_cal.acdb|677842fbadd1d5a3eb40e79bffd89b75a730e99c
+etc/General_cal.acdb:vendor/etc/Bluetooth_cal.acdb|9a3dd71272d1bb97f52f7e15b944a12f0689fa53
 etc/Global_cal.acdb:vendor/etc/Bluetooth_cal.acdb|03ab4195e72f4e58423db7a91e742ed3eeb7ea85
 etc/Handset_cal.acdb:vendor/etc/Bluetooth_cal.acdb|dd21cd35d37c02112224a346fd41707685998491
 etc/Hdmi_cal.acdb:vendor/etc/Bluetooth_cal.acdb|b5eb5fa8f379aee075dd5444392e8fa2958039a7
@@ -393,7 +393,6 @@ vendor/lib/libqti-perfd-client.so
 bin/pm-proxy:vendor/bin/pm-proxy
 bin/pm-service:vendor/bin/pm-service
 vendor/lib64/libperipheral_client.so|bc6b71eb5b8fce1c2ddf27ea3a0b42df380e6a0d
-vendor/lib/libperipheral_client.so
 
 # Postprocessing
 etc/permissions/com.qti.snapdragon.sdk.display.xml
