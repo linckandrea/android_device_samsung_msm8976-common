@@ -115,10 +115,11 @@ TARGET_BOARD_INFO_FILE := $(VENDOR_PATH)/board-info.txt
 # Camera
 USE_DEVICE_SPECIFIC_CAMERA := true
 TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
+    /system/bin/cameraserver=24 \
     /system/bin/mediaserver=24 \
-    /system/vendor/bin/hw/rild=28
+    /system/vendor/bin/mm-qcamera-daemon=24 \
+    /system/vendor/bin/hw/rild=27
 TARGET_USES_MEDIA_EXTENSIONS := true
-TARGET_HAS_LEGACY_CAMERA_HAL1 := true
 
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true

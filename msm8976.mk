@@ -146,7 +146,7 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service \
+    android.hardware.biometrics.fingerprint@2.1-service.8976 \
     fingerprint.msm8952
 
 # For android_filesystem_config.h
