@@ -1452,7 +1452,7 @@ service msm_irqbal_lb /vendor/bin/msm_irqbalance -f /vendor/etc/msm_irqbalance_l
 service qcamerasvr /vendor/bin/mm-qcamera-daemon
     class late_start
     user camera
-    group camera system inet input graphics
+    group camera system inet input graphics gps
     writepid /dev/cpuset/camera-daemon/tasks
 
 service vendor.qseecomd /vendor/bin/qseecomd
