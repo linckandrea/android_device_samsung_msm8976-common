@@ -1,0 +1,4 @@
+get_prop(flags_health_check, alarm_boot_prop)
+get_prop(flags_health_check, bg_daemon_prop)
+get_prop(flags_health_check, bservice_prop)
+
