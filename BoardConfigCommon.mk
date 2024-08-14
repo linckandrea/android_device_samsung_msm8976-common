@@ -114,7 +114,8 @@ TARGET_BOARD_INFO_FILE := $(VENDOR_PATH)/board-info.txt
 # Camera
 USE_DEVICE_SPECIFIC_CAMERA := true
 TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
-    /system/vendor/bin/hw/android.hardware.camera.provider@2.4-service=24 \
+    /system/lib/hw/camera.vendor.msm8952.so=24 \
+    /system/bin/camerserver=24 \
     /system/vendor/bin/mm-qcamera-daemon=24 \
     /system/vendor/bin/hw/rild=27
 
