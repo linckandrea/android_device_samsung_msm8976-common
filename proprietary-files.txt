@@ -1,13 +1,13 @@
 # Samsung Package Version: T813XXS2BSJ3_T813XAC2BSA2_XAC, unless pinned
 
 # ACBD Data - T819XXU2BSA1
-etc/Bluetooth_cal.acdb:vendor/etc/Bluetooth_cal.acdb|677842fbadd1d5a3eb40e79bffd89b75a730e99c
-etc/General_cal.acdb:vendor/etc/General_cal.acdb|9a3dd71272d1bb97f52f7e15b944a12f0689fa53
-etc/Global_cal.acdb:vendor/etc/Global_cal.acdb|03ab4195e72f4e58423db7a91e742ed3eeb7ea85
-etc/Handset_cal.acdb:vendor/etc/Handset_cal.acdb|dd21cd35d37c02112224a346fd41707685998491
-etc/Hdmi_cal.acdb:vendor/etc/Hdmi_cal.acdb|b5eb5fa8f379aee075dd5444392e8fa2958039a7
-etc/Headset_cal.acdb:vendor/etc/Headset_cal.acdb|783e1a15733b0d05a0992456dcb041b4132692a5
-etc/Speaker_cal.acdb:vendor/etc/Speaker_cal.acdb|42db2fe3eb16292bf39f685724e9c215a7a2dc84
+etc/Bluetooth_cal.acdb|677842fbadd1d5a3eb40e79bffd89b75a730e99c
+etc/General_cal.acdb|9a3dd71272d1bb97f52f7e15b944a12f0689fa53
+etc/Global_cal.acdb|03ab4195e72f4e58423db7a91e742ed3eeb7ea85
+etc/Handset_cal.acdb|dd21cd35d37c02112224a346fd41707685998491
+etc/Hdmi_cal.acdb|b5eb5fa8f379aee075dd5444392e8fa2958039a7
+etc/Headset_cal.acdb|783e1a15733b0d05a0992456dcb041b4132692a5
+etc/Speaker_cal.acdb|42db2fe3eb16292bf39f685724e9c215a7a2dc84
 
 # ADSP
 bin/adsprpcd:vendor/bin/adsprpcd
