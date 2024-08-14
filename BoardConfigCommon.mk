@@ -112,6 +112,7 @@ QCOM_BT_USE_SMD_TTY := true
 TARGET_BOARD_INFO_FILE := $(VENDOR_PATH)/board-info.txt
 
 # Camera
+BOARD_QTI_CAMERA_32BIT_ONLY := true
 USE_DEVICE_SPECIFIC_CAMERA := true
 TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
     /system/bin/cameraserver=24 \
