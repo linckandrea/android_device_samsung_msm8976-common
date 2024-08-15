@@ -38,6 +38,10 @@
 
 using namespace android;
 
+static const char DIS_DISABLE[] = "disable";
+static const char KEY_DIS[] = "dis";
+static const char KEY_SUPPORTED_VIDEO_HIGH_FRAME_RATE_MODES[] = "video-hfr-values";
+
 static Mutex gCameraWrapperLock;
 static camera_module_t *gVendorModule = 0;
 
@@ -57,6 +61,8 @@ static int camera_get_camera_info(int camera_id, struct camera_info *info);
 static struct hw_module_methods_t camera_module_methods = {
     .open = camera_device_open
 };
+
+#define KEY_VIDEO_FRAME_FORMAT "video-frame-format"
 
 camera_module_t HAL_MODULE_INFO_SYM = {
     .common = {
@@ -119,7 +125,24 @@ static char *camera_fixup_getparams(int id __unused, const char *settings)
     params.dump();
 #endif
 
-    // Stub
+    const char *videoSizesStr = params.get(android::CameraParameters::KEY_SUPPORTED_VIDEO_SIZES);
+    char tmpsz[strlen(videoSizesStr) + 10 + 1];
+    sprintf(tmpsz, "3840x2160,%s", videoSizesStr);
+    params.set(android::CameraParameters::KEY_SUPPORTED_VIDEO_SIZES, tmpsz);
+
+    /* If the vendor has HFR values but doesn't also expose that
+     * this can be turned off, fixup the params to tell the Camera
+     * that it really is okay to turn it off.
+     */
+    params.setPreviewFormat("yuv420sp");
+    params.set(KEY_VIDEO_FRAME_FORMAT, "yuv420sp");
+
+    const char* hfrValues = params.get(KEY_SUPPORTED_VIDEO_HIGH_FRAME_RATE_MODES);
+    if (hfrValues && *hfrValues && ! strstr(hfrValues, "off")) {
+        char tmp[strlen(hfrValues) + 4 + 1];
+        sprintf(tmp, "%s,off", hfrValues);
+        params.set(KEY_SUPPORTED_VIDEO_HIGH_FRAME_RATE_MODES, tmp);
+    }
 
 #if !LOG_NDEBUG
     ALOGV("%s: fixed parameters:", __FUNCTION__);
@@ -143,6 +166,13 @@ static char *camera_fixup_setparams(int id, const char *settings)
 #endif
 
     params.set(CameraParameters::KEY_PREVIEW_FPS_RANGE, "7500,30000");
+
+    const char* recordingHint = params.get(android::CameraParameters::KEY_RECORDING_HINT);
+    bool isVideo = recordingHint && !strcmp(recordingHint, "true");
+
+    if (isVideo) {
+        params.set(KEY_DIS, DIS_DISABLE);
+    }
 
 #if !LOG_NDEBUG
     ALOGV("%s: fixed parameters:", __FUNCTION__);
