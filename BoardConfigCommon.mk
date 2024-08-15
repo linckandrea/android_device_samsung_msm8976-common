@@ -115,9 +115,9 @@ TARGET_BOARD_INFO_FILE := $(VENDOR_PATH)/board-info.txt
 USE_DEVICE_SPECIFIC_CAMERA := true
 TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
     /system/lib/hw/camera.vendor.msm8952.so=24 \
-    /system/bin/camerserver=24 \
+    /system/bin/cameraserver=24 \
     /system/vendor/bin/mm-qcamera-daemon=24 \
-    /system/vendor/bin/hw/rild=27
+    /system/vendor/bin/hw/rild=26
 
 TARGET_USES_MEDIA_EXTENSIONS := true
 
@@ -200,7 +200,6 @@ BOARD_USES_QC_TIME_SERVICES := true
 
 # Radio
 BOARD_PROVIDES_LIBRIL := true
-TARGET_RIL_VARIANT := caf
 
 # Ramdisk
 BOARD_ROOT_EXTRA_FOLDERS := bt_firmware dsp efs firmware firmware-modem persist
