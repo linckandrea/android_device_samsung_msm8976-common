@@ -1,2 +1,5 @@
-r_dir_file(cameraserver, camera_data_file);
 r_dir_file(cameraserver, firmware_file);
+allow cameraserver camera_data_file:dir rw_dir_perms;
+
+allow cameraserver sysfs_camera:dir search;
+allow cameraserver sysfs_camera:file rw_file_perms;
