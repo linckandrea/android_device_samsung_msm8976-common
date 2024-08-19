@@ -9,3 +9,5 @@ allow system_app sysfs_rtc:dir search;
 allow system_app sysfs_rtc:file r_file_perms;
 
 set_prop(system_app, timekeep_prop)
+
+set_prop(system_app, vendor_default_prop)
