@@ -33,12 +33,27 @@
 #include <camera/Camera.h>
 #include <camera/CameraParameters.h>
 
-#define OPEN_RETRIES    10
+#define OPEN_RETRIES    20
 #define OPEN_RETRY_MSEC 40
 
 using namespace android;
 
 static const char PIXEL_FORMAT_YUV420SP_NV21E[] = "yuv420sp-nv21e";
+static const char KEY_SUPPORTED_PICTURE_SIZES[] = "picture-size-values";
+
+typedef struct wrapper_camera_device {
+    camera_device_t base;
+    int camera_released;
+    int id;
+    camera_device_t *vendor;
+} wrapper_camera_device_t;
+
+#define VENDOR_CALL(device, func, ...) ({ \
+    wrapper_camera_device_t *__wrapper_dev = (wrapper_camera_device_t*) device; \
+    __wrapper_dev->vendor->ops->func(__wrapper_dev->vendor, ##__VA_ARGS__); \
+})
+
+#define CAMERA_ID(device) (((wrapper_camera_device_t *)(device))->id)
 
 static Mutex gCameraWrapperLock;
 static camera_module_t *gVendorModule = 0;
@@ -55,46 +70,6 @@ static int camera_device_open(const hw_module_t *module, const char *name,
         hw_device_t **device);
 static int camera_get_number_of_cameras(void);
 static int camera_get_camera_info(int camera_id, struct camera_info *info);
-
-static struct hw_module_methods_t camera_module_methods = {
-    .open = camera_device_open
-};
-
-camera_module_t HAL_MODULE_INFO_SYM = {
-    .common = {
-        .tag = HARDWARE_MODULE_TAG,
-        .version_major = 1,
-        .version_minor = 0,
-        .id = CAMERA_HARDWARE_MODULE_ID,
-        .name = "MSM8952 Camera Wrapper",
-        .author = "The LineageOS Project",
-        .methods = &camera_module_methods,
-        .dso = NULL, /* remove compilation warnings */
-        .reserved = {0}, /* remove compilation warnings */
-    },
-    .get_number_of_cameras = camera_get_number_of_cameras,
-    .get_camera_info = camera_get_camera_info,
-    .set_callbacks = NULL, /* remove compilation warnings */
-    .get_vendor_tag_ops = NULL, /* remove compilation warnings */
-    .open_legacy = NULL, /* remove compilation warnings */
-    .set_torch_mode = NULL, /* remove compilation warnings */
-    .init = NULL, /* remove compilation warnings */
-    .reserved = {0}, /* remove compilation warnings */
-};
-
-typedef struct wrapper_camera_device {
-    camera_device_t base;
-    int camera_released;
-    int id;
-    camera_device_t *vendor;
-} wrapper_camera_device_t;
-
-#define VENDOR_CALL(device, func, ...) ({ \
-    wrapper_camera_device_t *__wrapper_dev = (wrapper_camera_device_t*) device; \
-    __wrapper_dev->vendor->ops->func(__wrapper_dev->vendor, ##__VA_ARGS__); \
-})
-
-#define CAMERA_ID(device) (((wrapper_camera_device_t *)(device))->id)
 
 static int check_vendor_module()
 {
@@ -121,7 +96,10 @@ static char *camera_fixup_getparams(int id __unused, const char *settings)
     params.dump();
 #endif
 
-    // Stub
+    if (id == 1) {
+        params.set(CameraParameters::KEY_SUPPORTED_PICTURE_SIZES,
+                   "1280x720,640x480");
+    }
 
 #if !LOG_NDEBUG
     ALOGV("%s: fixed parameters:", __FUNCTION__);
@@ -658,3 +636,29 @@ static int camera_get_camera_info(int camera_id, struct camera_info *info)
         return 0;
     return gVendorModule->get_camera_info(camera_id, info);
 }
+
+static struct hw_module_methods_t camera_module_methods = {
+    .open = camera_device_open
+};
+
+camera_module_t HAL_MODULE_INFO_SYM = {
+    .common = {
+        .tag = HARDWARE_MODULE_TAG,
+        .version_major = 1,
+        .version_minor = 0,
+        .id = CAMERA_HARDWARE_MODULE_ID,
+        .name = "MSM8952 Camera Wrapper",
+        .author = "The LineageOS Project",
+        .methods = &camera_module_methods,
+        .dso = NULL, /* remove compilation warnings */
+        .reserved = {0}, /* remove compilation warnings */
+    },
+    .get_number_of_cameras = camera_get_number_of_cameras,
+    .get_camera_info = camera_get_camera_info,
+    .set_callbacks = NULL, /* remove compilation warnings */
+    .get_vendor_tag_ops = NULL, /* remove compilation warnings */
+    .open_legacy = NULL, /* remove compilation warnings */
+    .set_torch_mode = NULL, /* remove compilation warnings */
+    .init = NULL, /* remove compilation warnings */
+    .reserved = {0}, /* remove compilation warnings */
+};
