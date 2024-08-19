@@ -1366,6 +1366,12 @@ on property:sys.boot_completed=1
     # CPE fw_name used by sound trigger HAL
     chown media audio /sys/kernel/wcd_cpe0/fw_name
 
+    stop cameraserver
+    start qcamerasvr
+
+on property:init.svc.qcamerasvr=running
+    start cameraserver
+
 on property:persist.env.fastdorm.enabled=true
     setprop persist.radio.data_no_toggle 1
 
@@ -1453,6 +1459,7 @@ service qcamerasvr /vendor/bin/mm-qcamera-daemon
     class late_start
     user camera
     group camera system inet input graphics gps
+    disabled
     writepid /dev/cpuset/camera-daemon/tasks
 
 service vendor.qseecomd /vendor/bin/qseecomd
