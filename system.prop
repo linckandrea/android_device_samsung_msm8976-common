@@ -36,6 +36,9 @@ vendor.qcom.bluetooth.soc=rome
 # Camera
 media.camera.ts.monotonic=1
 
+# Charger
+ro.charger.enable_suspend=true
+
 # Dalvik
 dalvik.vm.heapstartsize=16m
 dalvik.vm.heapgrowthlimit=288m
