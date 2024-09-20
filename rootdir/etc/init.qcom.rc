@@ -77,6 +77,10 @@ on post-fs-data
     write /sys/block/mmcblk0/queue/read_ahead_kb 2048
     write /sys/block/mmcblk0rpmb/queue/read_ahead_kb 2048
 
+    # biometrics
+    mkdir /data/biometrics 0700 system system
+    restorecon /data/biometrics
+
 on boot
     # Bluetooth
     chown bluetooth net_bt /sys/class/rfkill/rfkill0/type
