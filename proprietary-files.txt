@@ -240,22 +240,22 @@ etc/firmware/ois_SE_BU24219.bin
 etc/firmware/ois_SP_BU24219.bin
 etc/firmware/ois_VE_BU24219.bin
 
-# DRM
-bin/qseecomd:vendor/bin/qseecomd
-vendor/lib64/lib-sec-disp.so
-vendor/lib64/libdrmfs.so
-vendor/lib64/libdrmtime.so
-vendor/lib64/libGPreqcancel.so
-vendor/lib64/libGPreqcancel_svc.so
-vendor/lib64/libqisl.so
-vendor/lib64/libQSEEComAPI.so
-vendor/lib64/librpmb.so
-vendor/lib64/libsecureui.so
-vendor/lib64/libsecureui_svcsock.so
-vendor/lib64/libSecureUILib.so
-vendor/lib64/libssd.so
-vendor/lib64/libStDrvInt.so
-vendor/lib/libQSEEComAPI.so
+#  DRM - from smartron-rimo02a-8.0.0-T5524INDURC-475
+bin/qseecomd:vendor/bin/qseecomd|20a166a2258222a786f7f8948c5f05efefeefe6d
+vendor/lib/libQSEEComAPI.so|c7e251269fc8d00a287449efef7c7385f87bdd07
+vendor/lib64/lib-sec-disp.so|53aa1f8358f67b4a2212d0c7d3b64d3b91ccdb19
+vendor/lib64/libQSEEComAPI.so|13daf33d75412c53938f881bdbdfa14aa86b317f
+vendor/lib64/libSecureUILib.so|d040aacabfa73d4f496f2e719515dcb82ca7ac2c|53eb8634a4c15597e9e9c41892660821ae13e14a
+vendor/lib64/libStDrvInt.so|45ddafcbc484b1e3e94ffe4af68f26f672c3c4b2
+vendor/lib64/libdrmfs.so|91543daa7f573420e701fbc942c12bee1ac20812
+vendor/lib64/libdrmtime.so|8a82cb36856a1f845e1cb8c7c29ec52b9636f7e9
+vendor/lib64/librpmb.so|0d2150269bd6fe41a02d3c41e5c5739f72ae4eb1|cc12a22a9b4304ba20b820589ff0bfd6954f668e
+vendor/lib64/libsecureui.so|2af128ecb7724f912795aed8b5419560bc8d8466
+vendor/lib64/libsecureui_svcsock.so|cc586de86f4e93c1a072420e3ee2dc743617c56e
+vendor/lib64/libssd.so|53e2fc329e1b709758d4b66180c88c42cbd14288
+vendor/lib64/libqisl.so|c665714a1e618313a645be5617fc1f09a3a4d41b
+vendor/lib64/libGPreqcancel.so|a11d29d299f9514bceac4857cd52c4ac8894ced5
+vendor/lib64/libGPreqcancel_svc.so|8bdb7f24be10323a1d8890cc8124f4df63bf7141
 
 # FingerPrint
 lib64/libbauthserver.so
