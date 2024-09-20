@@ -11,3 +11,6 @@ get_prop(system_server, userspace_reboot_config_prop);
 get_prop(system_server, exported_camera_prop);
 
 allow system_server proc_last_kmsg:file r_file_perms;
+
+# Purpose : dontaudit system_server is not allowed to getopt 'shell' type of unix_stream_socket
+dontaudit system_server shell:unix_stream_socket getopt;
