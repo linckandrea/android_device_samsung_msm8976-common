@@ -279,6 +279,12 @@ PRODUCT_PACKAGES += \
 # HIDL HAL list
 PRODUCT_ENFORCE_VINTF_MANIFEST_OVERRIDE := true
 
+PRODUCT_PACKAGES += \
+    libhidltransport \
+    libhidltransport.vendor \
+    libhwbinder \
+    libhwbinder.vendor
+
 # RenderScript HAL
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
