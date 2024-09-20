@@ -1,0 +1,2 @@
+allow hal_gnss sysfs_batteryinfo:dir search;
+allow hal_gnss sysfs_batteryinfo:file { read open getattr };
