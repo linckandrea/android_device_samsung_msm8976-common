@@ -200,7 +200,6 @@ BOARD_USES_QC_TIME_SERVICES := true
 
 # Radio
 BOARD_PROVIDES_LIBRIL := true
-TARGET_RIL_VARIANT := caf
 
 # Ramdisk
 BOARD_ROOT_EXTRA_FOLDERS := bt_firmware dsp efs firmware firmware-modem persist
