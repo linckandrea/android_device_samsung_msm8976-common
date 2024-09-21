@@ -32,6 +32,10 @@ import /vendor/etc/init/hw/init.target.rc
 on early-init
     mount debugfs debugfs /sys/kernel/debug
     chmod 0755 /sys/kernel/debug
+    start vendor.qseecomd
+
+on init
+    start vendor.qseecomd
 
 on early-boot
     # Set RLIMIT_MEMLOCK to 64MB
@@ -46,8 +50,6 @@ on early-boot
     write /sys/bus/msm_subsys/devices/subsys2/restart_level "related"
     write /sys/bus/msm_subsys/devices/subsys3/restart_level "related"
     write /sys/bus/msm_subsys/devices/subsys4/restart_level "related"
-
-    start vendor.qseecomd
 
 on fs
     wait /dev/block/platform/soc.0/${ro.boot.bootdevice}
@@ -71,6 +73,11 @@ on late-fs
 
     # Mount RW partitions which need run fsck
     mount_all /vendor/etc/fstab.qcom --late
+
+on post-fs
+    start vendor.qseecomd
+    # Wait qseecomd started
+    wait_for_prop sys.listeners.registered true
 
 on post-fs-data
     # Boot time fs tune
@@ -1461,6 +1468,7 @@ service vendor.qseecomd /vendor/bin/qseecomd
     class core
     user root
     group root
+    disabled
     writepid /dev/cpuset/system-background/tasks
 
 service perfd /vendor/bin/perfd
