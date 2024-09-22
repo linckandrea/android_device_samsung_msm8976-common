@@ -4,3 +4,8 @@ allow vold hal_bootctl_hwservice:hwservice_manager find;
 
 # For setting read_ahead_kb
 allow vold sysfs_mmc_host:file create_file_perms;
+
+allow vold adsprpcd_file:dir r_dir_perms;
+
+# /efs
+allow vold efs_file:dir r_dir_perms;
