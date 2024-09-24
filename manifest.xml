@@ -208,4 +208,5 @@
             <name>IPerf</name>
             <instance>default</instance>
         </interface>
+    </hal>
 </manifest>
