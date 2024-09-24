@@ -81,6 +81,12 @@ on post-fs-data
     mkdir /data/biometrics 0700 system system
     restorecon /data/biometrics
 
+    # Create PERFD deamon related dirs
+    mkdir       /data/vendor/perfd 0770 root system
+    chmod 2770  /data/vendor/perfd
+    # Default values is re-created on boot based of environment properties
+    rm          /data/vendor/perfd/default_values
+
 on boot
     # Bluetooth
     chown bluetooth net_bt /sys/class/rfkill/rfkill0/type
@@ -1303,10 +1309,6 @@ on post-fs-data
     # Create folder for mm-qcamera-daemon
     mkdir /data/camera 0770 media camera
 
-    # Create PERFD deamon related dirs
-    mkdir /data/system/perfd 0770 root system
-    chmod 2770 /data/system/perfd
-
     # Sensor
     mkdir /persist/sensors 0775 system system
     chmod 664 /persist/sensors/sensors_settings
@@ -1466,12 +1468,6 @@ service vendor.qseecomd /vendor/bin/qseecomd
 on property:sys.listeners.registered=*
     setprop sys.keymaster.loaded ${vendor.sys.listeners.registered}
     setprop vendor.sys.keymaster.loaded ${vendor.sys.listeners.registered}
-
-service perfd /vendor/bin/perfd
-    class main
-    user root
-    disabled
-    writepid /dev/cpuset/system-background/tasks
 
 service thermal-engine /vendor/bin/thermal-engine
     class main
