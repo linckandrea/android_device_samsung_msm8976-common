@@ -15,12 +15,5 @@
 ** limitations under the License.
 */
 
-#define RIL_UNSOL_SIM_SWAP_STATE_CHANGED 11057
-
-static inline void remapUnsol(int *unsol) {
-    switch(*unsol) {
-        case RIL_UNSOL_SIM_SWAP_STATE_CHANGED:
-            *unsol = RIL_UNSOL_RESPONSE_SIM_STATUS_CHANGED;
-        return;
-    }
+static inline void remapUnsol(int *unsol __unused) {
 }
