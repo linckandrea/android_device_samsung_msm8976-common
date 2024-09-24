@@ -41,7 +41,6 @@ extern "C" {
 }
 
 #define INVALID_HEX_CHAR 16
-#define MAX_BROADCAST_SMS_CONFIG_INFO 25
 
 using namespace android::hardware::radio;
 using namespace android::hardware::radio::V1_0;
@@ -2855,9 +2854,9 @@ Return<void> RadioImpl::setCarrierInfoForImsiEncryption(int32_t serial,
         memsetAndFreeStrings(2, imsiEncryption.mnc, imsiEncryption.mcc);
         return Void();
     }
-    imsiEncryption.carrierKeyLength = data.carrierKey.size();
-    imsiEncryption.carrierKey = new uint8_t[imsiEncryption.carrierKeyLength];
-    memcpy(imsiEncryption.carrierKey, data.carrierKey.data(), imsiEncryption.carrierKeyLength);
+    int32_t lSize = data.carrierKey.size();
+    imsiEncryption.carrierKey = new uint8_t[lSize];
+    memcpy(imsiEncryption.carrierKey, data.carrierKey.data(), lSize);
     imsiEncryption.expirationTime = data.expirationTime;
     CALL_ONREQUEST(pRI->pCI->requestNumber, &imsiEncryption,
             sizeof(RIL_CarrierInfoForImsiEncryption), pRI, mSlotId);
@@ -7114,7 +7113,7 @@ int radio::nitzTimeReceivedInd(int slotId,
         }
 
         nitzTime = convertCharPtrToHidlString(resp);
-        free(resp);
+        memsetAndFreeStrings(1, resp);
 #if VDBG
         RLOGD("nitzTimeReceivedInd: nitzTime %s receivedTime %" PRId64, nitzTime.c_str(),
                 nitzTimeReceived[slotId]);
@@ -8636,7 +8635,7 @@ int radio::networkScanResultInd(int slotId,
 
         V1_1::NetworkScanResult result;
         result.status = (V1_1::ScanStatus) networkScanResult->status;
-        result.error = (RadioError) networkScanResult->error;
+        result.error = (RadioError) e;
         convertRilCellInfoListToHal(
                 networkScanResult->network_infos,
                 networkScanResult->network_infos_length * sizeof(RIL_CellInfo_v12),
