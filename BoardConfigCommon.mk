@@ -194,6 +194,12 @@ TARGET_HAS_MEMFD_BACKPORT := true
 # Peripheral manager
 TARGET_PER_MGR_ENABLED := true
 
+# Power
+TARGET_POWERHAL_VARIANT := qcom
+TARGET_USES_INTERACTION_BOOST := true
+TARGET_POWERHAL_MODE_EXT := $(VENDOR_PATH)/hardware/power/power-mode.cpp
+TARGET_POWERHAL_BOOST_EXT := $(VENDOR_PATH)/hardware/power/power-boost.cpp
+
 # Properties
 TARGET_SYSTEM_PROP += $(VENDOR_PATH)/system.prop
 
