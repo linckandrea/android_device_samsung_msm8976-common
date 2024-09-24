@@ -60,6 +60,7 @@ BOARD_KERNEL_CMDLINE += androidboot.bootdevice=7824900.sdhci
 BOARD_KERNEL_CMDLINE += lpm_levels.sleep_disabled=1
 BOARD_KERNEL_CMDLINE += earlyprintk
 BOARD_KERNEL_CMDLINE += loop.max_part=7
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_IMAGE_NAME := Image.gz
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
@@ -197,8 +198,8 @@ TARGET_PER_MGR_ENABLED := true
 # Power
 TARGET_POWERHAL_VARIANT := qcom
 TARGET_USES_INTERACTION_BOOST := true
-TARGET_POWERHAL_MODE_EXT := $(DEVICE_PATH)/hardware/power/power-mode.cpp
-TARGET_POWERHAL_BOOST_EXT := $(DEVICE_PATH)/hardware/power/power-boost.cpp
+TARGET_POWERHAL_MODE_EXT := $(VENDOR_PATH)/hardware/power/power-mode.cpp
+TARGET_POWERHAL_BOOST_EXT := $(VENDOR_PATH)/hardware/power/power-boost.cpp
 
 # Properties
 TARGET_SYSTEM_PROP += $(VENDOR_PATH)/system.prop
