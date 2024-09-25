@@ -1382,7 +1382,11 @@ on property:sys.boot_completed=1
     # CPE fw_name used by sound trigger HAL
     chown media audio /sys/kernel/wcd_cpe0/fw_name
 
-    restart vendor.qcamerasvr
+    stop cameraserver
+    start qcamerasvr
+
+on property:init.svc.qcamerasvr=running
+    start cameraserver
 
 on property:persist.env.fastdorm.enabled=true
     setprop persist.radio.data_no_toggle 1
@@ -1453,15 +1457,12 @@ service msm_irqbal_lb /vendor/bin/msm_irqbalance -f /vendor/etc/msm_irqbalance_l
     writepid /dev/cpuset/system-background/tasks
 
 # Start camera server as daemon
-service vendor.qcamerasvr /vendor/bin/mm-qcamera-daemon
+service qcamerasvr /vendor/bin/mm-qcamera-daemon
     class late_start
     user camera
     group camera system inet input graphics gps
     disabled
     writepid /dev/cpuset/camera-daemon/tasks
-
-on property:init.svc.vendor.qcamerasvr=running
-    restart media
 
 service vendor.qseecomd /vendor/bin/qseecomd
     class core
