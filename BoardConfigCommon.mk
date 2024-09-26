@@ -185,9 +185,6 @@ TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 # Keymaster
 TARGET_PROVIDES_KEYMASTER := true
 
-# Network Routing
-TARGET_NEEDS_NETD_DIRECT_CONNECT_RULE := true
-
 # Memfd
 TARGET_HAS_MEMFD_BACKPORT := true
 
@@ -206,9 +203,6 @@ TARGET_SYSTEM_PROP += $(VENDOR_PATH)/system.prop
 # Qualcomm
 BOARD_USES_QCOM_HARDWARE := true
 BOARD_USES_QC_TIME_SERVICES := true
-
-# Radio
-BOARD_PROVIDES_LIBRIL := true
 
 # Ramdisk
 BOARD_ROOT_EXTRA_FOLDERS := bt_firmware dsp efs firmware firmware-modem persist
