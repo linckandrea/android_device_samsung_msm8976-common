@@ -230,14 +230,14 @@ vendor/lib/libchromatix_s5k6b2yx_zsl_preview_lc898122.so
 vendor/lib/libchromatix_s5k6b2yx_zsl_video_lc898122.so
 
 # Camera firmware
-etc/firmware/cpp_firmware_v1_10_0.fw
-etc/firmware/cpp_firmware_v1_1_1.fw
-etc/firmware/cpp_firmware_v1_1_6.fw
-etc/firmware/cpp_firmware_v1_2_0.fw
-etc/firmware/cpp_firmware_v1_4_0.fw
-etc/firmware/cpp_firmware_v1_5_0.fw
-etc/firmware/cpp_firmware_v1_6_0.fw
-etc/firmware/cpp_firmware_v1_8_0.fw
+etc/firmware/cpp_firmware_v1_10_0.fw:vendor/firmware/cpp_firmware_v1_10_0.fw
+etc/firmware/cpp_firmware_v1_1_1.fw:vendor/firmware/cpp_firmware_v1_1_1.fw
+etc/firmware/cpp_firmware_v1_1_6.fw:vendor/firmware/cpp_firmware_v1_1_6.fw
+etc/firmware/cpp_firmware_v1_2_0.fw:vendor/firmware/cpp_firmware_v1_2_0.fw
+etc/firmware/cpp_firmware_v1_4_0.fw:vendor/firmware/cpp_firmware_v1_4_0.fw
+etc/firmware/cpp_firmware_v1_5_0.fw:vendor/firmware/cpp_firmware_v1_5_0.fw
+etc/firmware/cpp_firmware_v1_6_0.fw:vendor/firmware/cpp_firmware_v1_6_0.fw
+etc/firmware/cpp_firmware_v1_8_0.fw:vendor/firmware/cpp_firmware_v1_8_0.fw
 etc/firmware/ois_SE_BU24219.bin
 etc/firmware/ois_SP_BU24219.bin
 etc/firmware/ois_VE_BU24219.bin
@@ -357,8 +357,8 @@ vendor/lib/libsd_sdk_display.so|765389b3c765424da4a875a8af278f0f6a41813f
 vendor/lib/libscale.so|8da4748bd2eb4c899bcc64b521f4b03a5d743555
 
 # Graphics firmware
-etc/firmware/a530_pfp.fw
-etc/firmware/a530_pm4.fw
+etc/firmware/a530_pfp.fw:vendor/firmware/a530_pfp.fw
+etc/firmware/a530_pm4.fw:vendor/firmware/a530_pm4.fw
 
 #  Keystore - from smartron-rimo02a-8.0.0-T5524INDURC-475
 vendor/lib64/hw/keystore.msm8952.so|20a5ac06eff901c97de41277ab1948d75b630c5b
