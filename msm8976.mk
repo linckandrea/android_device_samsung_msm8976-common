@@ -290,8 +290,15 @@ PRODUCT_PACKAGES += \
 PRODUCT_ENFORCE_VINTF_MANIFEST_OVERRIDE := true
 
 PRODUCT_PACKAGES += \
+    android.hidl.base@1.0 \
+    android.hidl.manager@1.0 \
+    android.hidl.manager@1.0-java
+
+PRODUCT_PACKAGES += \
     libhidltransport \
-    libhwbinder
+    libhidltransport.vendor \
+    libhwbinder \
+    libhwbinder.vendor \
 
 # RenderScript HAL
 PRODUCT_PACKAGES += \
