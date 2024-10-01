@@ -210,6 +210,9 @@ BOARD_ROOT_EXTRA_SYMLINKS := /system/etc/firmware/btfw32.tlv:/bt_firmware/image/
 BOARD_ROOT_EXTRA_SYMLINKS += /system/etc/firmware/btnv32.bin:/bt_firmware/image/btnv32.bin
 BOARD_ROOT_EXTRA_SYMLINKS += /data/tombstones:/tombstones
 
+# Render
+OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
+
 # Recovery
 TARGET_RECOVERY_FSTAB := $(VENDOR_PATH)/rootdir/etc/fstab.qcom
 TARGET_USERIMAGES_USE_EXT4 := true
