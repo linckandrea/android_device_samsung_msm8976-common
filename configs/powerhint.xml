@@ -103,11 +103,11 @@
         <!-- L CPU - Cluster max freq ~1.4 Ghz -->
         <!-- GPU - min freq 550 Mhz -->
         <!-- GPU - max freq 550 Mhz -->
-        <!-- GPUBW freq 775 Mhz-->
+        <!-- GPUBW freq 710 Mhz-->
         <Config
             Id="0x00001207" Enable="true" Target="msm8976"
             Resources="0x40800000, 0x579, 0x40800100, 0x579, 0x40804000, 0x579, 0x40804100, 0x579,
-            0x4280C000, 0x226, 0x42810000, 0x226, 0x42814000, 0x1E4F"/>
+            0x4280C000, 0x226, 0x42810000, 0x226, 0x42814000, 0x1BC0"/>
 
         <!--vr mode sustained performance-->
         <!-- B CPU - Cluster min freq ~1.2 Ghz -->
@@ -116,10 +116,10 @@
         <!-- L CPU - Cluster max freq ~1.2 Ghz -->
         <!-- GPU - min freq 432 Mhz -->
         <!-- GPU - max freq 432 Mhz -->
-        <!-- GPUBW freq 775 Mhz -->
+        <!-- GPUBW freq 710 Mhz -->
         <Config
             Id="0x00001301" Enable="true" Target="msm8976"
             Resources="0x40800000, 0x4E0, 0x40800100, 0x4E0, 0x40804000, 0x4E0, 0x40804100, 0x4E0, 0x4280C000, 0x1B0,
-            0x42810000, 0x1B0, 0x42814000, 0x1E4F"/>
+            0x42810000, 0x1B0, 0x42814000, 0x1BC0"/>
     </Powerhint>
 </HintConfigs>
