@@ -42,6 +42,8 @@ static const char PIXEL_FORMAT_YUV420SP_NV21E[] = "yuv420sp-nv21e";
 
 static Mutex gCameraWrapperLock;
 static camera_module_t *gVendorModule = 0;
+static preview_stream_ops *gPreviewWindow = 0;
+static bool gPreviewStartDeferred = false;
 
 static camera_notify_callback gUserNotifyCb = NULL;
 static camera_data_callback gUserDataCb = NULL;
@@ -167,13 +169,27 @@ static char *camera_fixup_setparams(int id, const char *settings)
 static int camera_set_preview_window(struct camera_device *device,
         struct preview_stream_ops *window)
 {
+    int rc = 0;
+
     if (!device)
         return -EINVAL;
 
     ALOGV("%s->%08X->%08X", __FUNCTION__, (uintptr_t)device,
             (uintptr_t)(((wrapper_camera_device_t*)device)->vendor));
 
-    return VENDOR_CALL(device, set_preview_window, window);
+    gPreviewWindow = window;
+
+    if (gPreviewWindow != 0) {
+        rc = VENDOR_CALL(device, set_preview_window, window);
+
+        if (gPreviewStartDeferred) {
+            ALOGV("%s call deferred start_preview", __FUNCTION__);
+            gPreviewStartDeferred = false;
+            VENDOR_CALL(device, start_preview);
+        }
+    }
+
+    return rc;
 }
 
 void camera_notify_cb(int32_t msg_type, int32_t ext1, int32_t ext2, void *user __unused) {
@@ -256,13 +272,22 @@ static int camera_msg_type_enabled(struct camera_device *device,
 
 static int camera_start_preview(struct camera_device *device)
 {
+    int rc = 0;
+
     if (!device)
         return -EINVAL;
 
     ALOGV("%s->%08X->%08X", __FUNCTION__, (uintptr_t)device,
             (uintptr_t)(((wrapper_camera_device_t*)device)->vendor));
 
-    return VENDOR_CALL(device, start_preview);
+    if (gPreviewWindow != 0) {
+        rc = VENDOR_CALL(device, start_preview);
+    } else {
+        ALOGV("%s invalid preview window, defer start_preview", __FUNCTION__);
+        gPreviewStartDeferred = true;
+    }
+
+    return rc;
 }
 
 static void camera_stop_preview(struct camera_device *device)
@@ -284,7 +309,12 @@ static int camera_preview_enabled(struct camera_device *device)
     ALOGV("%s->%08X->%08X", __FUNCTION__, (uintptr_t)device,
             (uintptr_t)(((wrapper_camera_device_t*)device)->vendor));
 
-    return VENDOR_CALL(device, preview_enabled);
+    if (gPreviewStartDeferred) {
+        ALOGV("%s deferred start_preview, return 1", __FUNCTION__);
+        return 1;
+    } else {
+        return VENDOR_CALL(device, preview_enabled);
+    }
 }
 
 static int camera_store_meta_data_in_buffers(struct camera_device *device,
@@ -510,6 +540,8 @@ done:
 #ifdef HEAPTRACKER
     heaptracker_free_leaked_memory();
 #endif
+    gPreviewWindow = 0;
+    gPreviewStartDeferred = false;
     return ret;
 }
 
