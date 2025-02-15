@@ -98,12 +98,7 @@
         <device name="SND_DEVICE_IN_SPEAKER_MIC_AEC" acdb_id="112"/>
         <device name="SND_DEVICE_IN_SPEAKER_MIC_NS" acdb_id="113"/>
         <device name="SND_DEVICE_IN_SPEAKER_MIC_AEC_NS" acdb_id="114"/>
-        <device name="SND_DEVICE_IN_SPEAKER_DMIC" acdb_id="43"/>
-        <device name="SND_DEVICE_IN_SPEAKER_DMIC_AEC" acdb_id="115"/>
-        <device name="SND_DEVICE_IN_SPEAKER_DMIC_NS" acdb_id="116"/>
-        <device name="SND_DEVICE_IN_SPEAKER_DMIC_AEC_NS" acdb_id="117"/>
         <device name="SND_DEVICE_IN_HEADSET_MIC" acdb_id="8"/>
-        <device name="SND_DEVICE_IN_HEADSET_MIC_FLUENCE" acdb_id="47"/>
         <device name="SND_DEVICE_IN_VOICE_SPEAKER_MIC" acdb_id="11"/>
         <device name="SND_DEVICE_IN_VOICE_HEADSET_MIC" acdb_id="8"/>
         <device name="SND_DEVICE_IN_HDMI_MIC" acdb_id="4"/>
@@ -119,7 +114,6 @@
         <device name="SND_DEVICE_IN_VOICE_TTY_VCO_HANDSET_MIC" acdb_id="36"/>
         <device name="SND_DEVICE_IN_VOICE_TTY_HCO_HEADSET_MIC" acdb_id="16"/>
         <device name="SND_DEVICE_IN_VOICE_REC_MIC" acdb_id="4"/>
-        <device name="SND_DEVICE_IN_VOICE_REC_MIC_NS" acdb_id="107"/>
         <device name="SND_DEVICE_IN_VOICE_REC_DMIC_STEREO" acdb_id="34"/>
         <device name="SND_DEVICE_IN_VOICE_REC_DMIC_FLUENCE" acdb_id="41"/>
         <device name="SND_DEVICE_IN_VOICE_RX" acdb_id="44"/>
@@ -150,12 +144,20 @@
         <device name="SND_DEVICE_IN_UNPROCESSED_QUAD_MIC" acdb_id="146"/>
         <device name="SND_DEVICE_IN_UNPROCESSED_HEADSET_MIC" acdb_id="147"/> -->
 
+        <device name="SND_DEVICE_IN_HANDSET_MIC" acdb_id="57"/>
         <device name="SND_DEVICE_IN_HANDSET_DMIC" acdb_id="4" />
-        <device name="SND_DEVICE_IN_SPEAKER_DMIC" acdb_id="4" />
-        <device name="SND_DEVICE_IN_CAMCORDER_MIC" acdb_id="55" />
+        <device name="SND_DEVICE_IN_HANDSET_DMIC_NS" acdb_id="34" />
+        <device name="SND_DEVICE_IN_HANDSET_DMIC_AEC"  acdb_id="4" />
+        <device name="SND_DEVICE_IN_HANDSET_DMIC_AEC_NS" acdb_id="4" />
+        <device name="SND_DEVICE_IN_SPEAKER_DMIC" acdb_id="11" />
+        <device name="SND_DEVICE_IN_SPEAKER_DMIC_AEC" acdb_id="11"/>
+        <device name="SND_DEVICE_IN_SPEAKER_DMIC_NS" acdb_id="35"/>
+        <device name="SND_DEVICE_IN_SPEAKER_DMIC_AEC_NS" acdb_id="11"/>
+        <device name="SND_DEVICE_IN_CAMCORDER_MIC" acdb_id="57" />
         <device name="SND_DEVICE_IN_VOICE_DMIC" acdb_id="4" />
         <device name="SND_DEVICE_IN_VOICE_SPEAKER_DMIC" acdb_id="11" />
         <device name="SND_DEVICE_IN_VOICE_REC_MIC" acdb_id="53" />
+        <device name="SND_DEVICE_IN_VOICE_REC_MIC_NS" acdb_id="103"/>
     </acdb_ids>
     <bit_width_configs>
         <device name="SND_DEVICE_OUT_SPEAKER" bit_width="24"/>
@@ -297,21 +299,21 @@
         <device name="SND_DEVICE_IN_UNPROCESSED_HEADSET_MIC" alias="headset-mic" /> -->
 
         <!-- Input devices -->
-        <device name="SND_DEVICE_IN_HANDSET_MIC" alias="rec-main-mic" />
+        <device name="SND_DEVICE_IN_HANDSET_MIC" alias="voip-main-mic-comm" />
         <device name="SND_DEVICE_IN_HANDSET_DMIC" alias="voice-call-main-mic" />
         <device name="SND_DEVICE_IN_HANDSET_DMIC_NS" alias="voice-call-NS-mic-handset" />
         <device name="SND_DEVICE_IN_HANDSET_DMIC_AEC" alias="voice-call-main-mic" />
         <device name="SND_DEVICE_IN_HANDSET_DMIC_AEC_NS" alias="voice-call-main-mic" />
-        <device name="SND_DEVICE_IN_SPEAKER_MIC" alias="rec-sub-mic" />
+        <device name="SND_DEVICE_IN_SPEAKER_MIC" alias="voip-main-mic-comm" />
         <device name="SND_DEVICE_IN_SPEAKER_DMIC" alias="voice-call-sub-mic" />
         <device name="SND_DEVICE_IN_SPEAKER_DMIC_NS" alias="voice-call-NS-mic-speaker" />
         <device name="SND_DEVICE_IN_SPEAKER_DMIC_AEC" alias="voice-call-sub-mic" />
         <device name="SND_DEVICE_IN_SPEAKER_DMIC_AEC_NS" alias="voice-call-sub-mic" />
         <device name="SND_DEVICE_IN_HEADSET_MIC" alias="rec-headset-mic" />
-        <device name="SND_DEVICE_IN_HEADSET_MIC_FLUENCE" alias="rec-main-mic" />
+        <device name="SND_DEVICE_IN_HEADSET_MIC_FLUENCE" alias="voip-main-mic-comm" />
         <device name="SND_DEVICE_IN_VOICE_SPEAKER_MIC" alias="voice-call-sub-mic" />
         <device name="SND_DEVICE_IN_VOICE_HEADSET_MIC" alias="voice-call-headset-mic" />
-        <device name="SND_DEVICE_IN_CAMCORDER_MIC" alias="rec-stereo-mic" />
+        <device name="SND_DEVICE_IN_CAMCORDER_MIC" alias="voip-main-mic-comm" />
         <device name="SND_DEVICE_IN_VOICE_DMIC" alias="voice-call-main-mic" />
         <device name="SND_DEVICE_IN_VOICE_SPEAKER_DMIC" alias="voice-call-sub-mic" />
         <device name="SND_DEVICE_IN_VOICE_TTY_FULL_HEADSET_MIC" alias="TTY-full-mic" />
