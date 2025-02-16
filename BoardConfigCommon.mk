@@ -212,6 +212,7 @@ OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 # Recovery
 TARGET_RECOVERY_FSTAB := $(VENDOR_PATH)/rootdir/etc/fstab.qcom
 TARGET_USERIMAGES_USE_EXT4 := true
+TARGET_USERIMAGES_USE_F2FS := true
 
 # Release tools
 TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_samsung
