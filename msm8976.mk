@@ -121,8 +121,7 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service \
     camera.msm8952 \
-    libshims_camera \
-    Snap
+    libshims_camera
 
 # DRM
 PRODUCT_PACKAGES += \
