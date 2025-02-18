@@ -130,14 +130,6 @@ static char *camera_fixup_getparams(int id __unused, const char *settings)
     params.dump();
 #endif
 
-    params.remove(CameraParameters::KEY_QC_FACE_RECOGNITION);
-    params.remove(CameraParameters::KEY_QC_SUPPORTED_FACE_RECOGNITION);
-    params.remove(CameraParameters::KEY_QC_SUPPORTED_FACE_RECOGNITION_MODES);
-    params.remove(CameraParameters::KEY_QC_FACE_DETECTION);
-    params.remove(CameraParameters::KEY_QC_SUPPORTED_FACE_DETECTION);
-    params.remove(CameraParameters::KEY_FACE_DETECTION);
-    params.remove(CameraParameters::KEY_SUPPORTED_FACE_DETECTION);
-
     String8 strParams = params.flatten();
     char *ret = strdup(strParams.string());
 
@@ -146,12 +138,8 @@ static char *camera_fixup_getparams(int id __unused, const char *settings)
 
 static char *camera_fixup_setparams(int id, const char *settings)
 {
-    int id = CAMERA_ID(device);
     CameraParameters params;
     params.unflatten(String8(settings));
-
-    const char* recordingHint = params.get(CameraParameters::KEY_RECORDING_HINT);
-    bool isVideo = false;
 
 #if !LOG_NDEBUG
     ALOGV("%s: original parameters:", __FUNCTION__);
@@ -164,11 +152,6 @@ static char *camera_fixup_setparams(int id, const char *settings)
     ALOGV("%s: fixed parameters:", __FUNCTION__);
     params.dump();
 #endif
-
-    if (id != 1) {
-        params.set(CameraParameters::KEY_ZSL, isVideo ? "off" : "on");
-        params.set(CameraParameters::KEY_CAMERA_MODE, isVideo ? "0" : "1");
-    }
 
     String8 strParams = params.flatten();
     if (fixed_set_params[id])

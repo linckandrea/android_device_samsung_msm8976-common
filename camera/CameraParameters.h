@@ -22,15 +22,6 @@ public:
     static const char KEY_OIS_SUPPORTED[];
     static const char KEY_SUPPORTED_EFFECT_PREVIEW_FPS_RANGE[];
     static const char PIXEL_FORMAT_YUV420SP_NV21[];
-    static const char KEY_QC_SUPPORTED_FACE_RECOGNITION[];
-    static const char KEY_QC_SUPPORTED_FACE_RECOGNITION_MODES[];
-    static const char KEY_QC_FACE_DETECTION[];
-    static const char KEY_QC_SUPPORTED_FACE_DETECTION[];
-    static const char KEY_FACE_DETECTION[];
-    static const char KEY_SUPPORTED_FACE_DETECTION[];
-    static const char KEY_ZSL[];
-    static const char KEY_CAMERA_MODE[];
-    static const char KEY_RECORDING_HINT[];
     int getInt64(const char *key) const;
 };
 

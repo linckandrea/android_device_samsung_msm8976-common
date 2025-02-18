@@ -21,15 +21,6 @@ namespace android {
 const char CameraParameters::KEY_OIS_SUPPORTED[] = "ois_supported";
 const char CameraParameters::KEY_SUPPORTED_EFFECT_PREVIEW_FPS_RANGE[] = "effect-available-fps-values";
 const char CameraParameters::PIXEL_FORMAT_YUV420SP_NV21[] = "yuv420sp-nv21e";
-const char CameraParameters::KEY_QC_SUPPORTED_FACE_RECOGNITION[] = "face-recognition-values";
-const char CameraParameters::KEY_QC_SUPPORTED_FACE_RECOGNITION_MODES[] = "face-recognition-values";
-const char CameraParameters::KEY_QC_FACE_DETECTION[] = "face-detection";
-const char CameraParameters::KEY_QC_SUPPORTED_FACE_DETECTION[] = "face-detection-values";
-const char CameraParameters::KEY_FACE_DETECTION[] = "face-detection";
-const char CameraParameters::KEY_SUPPORTED_FACE_DETECTION[] = "face-detection-values";
-const char CameraParameters::KEY_ZSL[] = "zsl";
-const char CameraParameters::KEY_CAMERA_MODE[] = "camera-mode";
-const char CameraParameters::KEY_RECORDING_HINT[] = "recording-hint";
 int CameraParameters::getInt64(const char *key) const { return -1; }
 
 }; // namespace android
