@@ -19,7 +19,8 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
 LOCAL_C_INCLUDES := \
-    system/media/camera/include
+    system/media/camera/include \
+    frameworks/native/include
 
 LOCAL_SRC_FILES := \
     CameraWrapper.cpp
@@ -32,6 +33,9 @@ LOCAL_SHARED_LIBRARIES := \
     libutils \
     libgui \
     libdl \
+    libhidltransport \
+    libnativewindow \
+    libsensor \
     android.hidl.token@1.0-utils \
     android.hardware.graphics.bufferqueue@1.0 \
     android.hardware.graphics.bufferqueue@2.0
