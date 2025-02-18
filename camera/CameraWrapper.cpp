@@ -393,7 +393,7 @@ static int camera_cancel_auto_focus(struct camera_device *device)
     ALOGV("%s->%08X->%08X", __FUNCTION__, (uintptr_t)device,
             (uintptr_t)(((wrapper_camera_device_t*)device)->vendor));
 
-    return VENDOR_CALL(device, cancel_auto_focus);
+    return 0;
 }
 
 static int camera_take_picture(struct camera_device *device)
