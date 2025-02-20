@@ -151,6 +151,7 @@ PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-service \
     AdvancedDisplay \
     gralloc.msm8952 \
+    copybit.msm8952 \
     hwcomposer.msm8952 \
     memtrack.msm8952 \
     liboverlay
