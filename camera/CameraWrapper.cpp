@@ -22,6 +22,7 @@
 */
 
 #define LOG_NDEBUG 1
+#define LOG_PARAMETERS
 
 #define LOG_TAG "CameraWrapper"
 #include <log/log.h>
@@ -113,19 +114,32 @@ static int check_vendor_module()
     return rv;
 }
 
-static char *camera_fixup_getparams(int id __unused, const char *settings)
+// nv12-venus is needed for blobs, but
+// framework has no idea what it is
+#define PIXEL_FORMAT_NV12_VENUS "nv12-venus"
+
+static char *camera_fixup_getparams(int id, const char *settings)
 {
     CameraParameters params;
     params.unflatten(String8(settings));
 
-#if !LOG_NDEBUG
+#if defined(LOG_PARAMETERS)
     ALOGV("%s: original parameters:", __FUNCTION__);
     params.dump();
 #endif
 
-    // Stub
+    //Hide nv12-venus from Android.
+    if (strcmp (params.getPreviewFormat(), PIXEL_FORMAT_NV12_VENUS) == 0)
+          params.setPreviewFormat(params.PIXEL_FORMAT_YUV420SP);
 
-#if !LOG_NDEBUG
+    // Set preferred video preview size
+    if (id == 0) {
+        params.set(CameraParameters::KEY_PREFERRED_PREVIEW_SIZE_FOR_VIDEO, "1920x1080");
+    } else if (id == 1) {
+        params.set(CameraParameters::KEY_PREFERRED_PREVIEW_SIZE_FOR_VIDEO, "1280x720");
+    }
+
+#if defined(LOG_PARAMETERS)
     ALOGV("%s: fixed parameters:", __FUNCTION__);
     params.dump();
 #endif
@@ -141,14 +155,14 @@ static char *camera_fixup_setparams(int id, const char *settings)
     CameraParameters params;
     params.unflatten(String8(settings));
 
-#if !LOG_NDEBUG
+#if defined(LOG_PARAMETERS)
     ALOGV("%s: original parameters:", __FUNCTION__);
     params.dump();
 #endif
 
     params.set(CameraParameters::KEY_PREVIEW_FPS_RANGE, "7500,30000");
 
-#if !LOG_NDEBUG
+#if defined(LOG_PARAMETERS)
     ALOGV("%s: fixed parameters:", __FUNCTION__);
     params.dump();
 #endif
