@@ -27,5 +27,6 @@
     <string name="pref_camera_iso_value_iso400" translatable="false">400</string>
     <string name="pref_camera_iso_value_iso800" translatable="false">800</string>
     <string name="pref_camera_iso_value_iso1600" translatable="false">1600</string>
+    <string name="pref_camera_iso_value_iso3200" translatable="false">3200</string>
 
 </resources>
