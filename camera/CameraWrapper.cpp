@@ -34,7 +34,7 @@
 #include <camera/Camera.h>
 #include <camera/CameraParameters.h>
 
-#define OPEN_RETRIES    10
+#define OPEN_RETRIES    150
 #define OPEN_RETRY_MSEC 40
 
 using namespace android;
